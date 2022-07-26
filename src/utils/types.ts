@@ -14,16 +14,27 @@ export type CoursesContextType = ICoursesContextType | null;
 
 export type actionTypeCourses = {
   type: string;
-  data: coursesDataType;
+  data: courseType[];
+};
+
+export type courseType = {
+  title: string;
+  description: string;
 };
 
 export type coursesDataType = { courses: any[] };
 
-export type userDataType = { user: any; token: string };
+export type userType = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+export type userDataType = { user: userType | null; token: string };
 
 export type actionType = {
   type: string;
-  data: userDataType;
+  data: userType;
   token: string;
 };
 export type contextProps = {

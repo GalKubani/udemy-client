@@ -1,7 +1,7 @@
 import { actionType, userDataType } from '../utils/types';
 
 export const userDataInitialState: userDataType = {
-  user: {},
+  user: null,
   token: '',
 };
 

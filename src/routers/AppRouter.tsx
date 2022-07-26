@@ -11,22 +11,22 @@ import CoursesContextProvider from '../context/CoursesContext';
 const AppRouter = () => (
   <BrowserRouter>
     <LoginContextProvider>
-      <Header />
-      <Routes>
-        <Route path="/" element={() => <Navigate to="/home" replace />} />
-        <Route
-          path="/home"
-          element={
-            <LoginRoute path="/logout">
-              <Home />
-            </LoginRoute>
-          }
-        />
-        <CoursesContextProvider>
+      <CoursesContextProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={() => <Navigate to="/home" replace />} />
+          <Route
+            path="/home"
+            element={
+              <LoginRoute path="/logout">
+                <Home />
+              </LoginRoute>
+            }
+          />
           <Route path="/home" element={Home} />
-        </CoursesContextProvider>
-        <Route path="*" element={PageNotFound} />
-      </Routes>
+          <Route path="*" element={PageNotFound} />
+        </Routes>
+      </CoursesContextProvider>
       <Footer />
     </LoginContextProvider>
   </BrowserRouter>

@@ -1,7 +1,7 @@
-import { coursesDataType, actionTypeCourses } from '../utils/types';
+import { actionTypeCourses, courseType } from '../utils/types';
 
 export const getCoursesAction = (
-  courseData: coursesDataType,
+  courseData: courseType[],
 ): actionTypeCourses => ({
   type: 'GET_COURSES',
   data: courseData,

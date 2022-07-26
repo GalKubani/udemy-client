@@ -11,6 +11,7 @@ const Home = () => {
   document.getElementsByTagName(
     'title',
   )[0].innerHTML = `Online Courses- Learn Anything On Yours Schedule | Udemy`;
+
   useEffect(() => {
     async function fetchData() {
       await getAllAdverts().then(res => {
@@ -18,10 +19,7 @@ const Home = () => {
         setCurrentlyShownCourses(res);
       });
     }
-    fetchData().then(res => {
-      console.log(res);
-      console.log('fetched adverts');
-    });
+    fetchData();
   }, []);
   return <div className="home"></div>;
 };

@@ -6,7 +6,7 @@ const advertReducer = (
 ): coursesDataType => {
   switch (action.type) {
     case 'GET_COURSES':
-      return { courses: [...action.data.courses] };
+      return { courses: [...action.data] };
     default:
       return { ...courseData };
   }
