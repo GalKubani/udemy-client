@@ -1,9 +1,9 @@
 import React, { createContext, useReducer } from 'react';
 import loginReducer, { userDataInitialState } from '../reducers/loginReducer';
 import { getUserFromCookie } from '../cookies/cookies';
-import { actionType, contextProps, ILoginContextType } from '../utils/types';
+import { actionType, contextProps, LoginContextType } from '../utils/types';
 
-export const LoginContext = createContext<ILoginContextType | null>(null);
+export const LoginContext = createContext<LoginContextType>(null);
 
 const LoginContextProvider = (props: contextProps) => {
   const cookieUserData = getUserFromCookie();

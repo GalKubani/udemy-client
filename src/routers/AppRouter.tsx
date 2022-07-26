@@ -6,7 +6,7 @@ import Home from '../components/main/Home';
 import PageNotFound from '../components/main/PageNotFound';
 import LoginContextProvider from '../context/LoginContext';
 import LoginRoute from './LoginRouter';
-// import CoursesContextProvider from '../context/CoursesContext';
+import CoursesContextProvider from '../context/CoursesContext';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -14,7 +14,6 @@ const AppRouter = () => (
       <Header />
       <Routes>
         <Route path="/" element={() => <Navigate to="/home" replace />} />
-        {/*<LoginRoute path="/logout" component={Home} />*/}
         <Route
           path="/home"
           element={
@@ -23,9 +22,9 @@ const AppRouter = () => (
             </LoginRoute>
           }
         />
-        {/*<AdvertContextProvider>*/}
-        <Route path="/home" element={Home} />
-        {/*</AdvertContextProvider>*/}
+        <CoursesContextProvider>
+          <Route path="/home" element={Home} />
+        </CoursesContextProvider>
         <Route path="*" element={PageNotFound} />
       </Routes>
       <Footer />
