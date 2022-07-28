@@ -1,0 +1,28 @@
+.modal-container{
+  position: absolute;
+  display:flex;
+  align-items: center;
+  border: 1px solid $myBlack;
+  top:100%;
+  right: 0;
+  width:16rem;
+  background: #fff;
+}
+.modal-button{
+  width: 100%;
+  background: $myBlack;
+  color: #fff;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+.modal-text{
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.02rem;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+.modal-content{
+  padding:0.8rem;
+}
