@@ -9,7 +9,6 @@ const loginReducer = (
   userData: userDataType,
   action: actionType,
 ): userDataType => {
-  console.log(action);
   switch (action.type) {
     case 'LOGIN_USER':
       return { user: { ...action.data }, token: action.token };

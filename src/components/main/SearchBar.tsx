@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 const SearchBar = ({ onSearchAttempt }: any) => {
   const onAttemptSearch = (e: any) => {
     e.preventDefault();
-    let allInputs = document
-      .getElementsByClassName('search-bar')[0]
-      .getElementsByClassName('text_input');
-    let searchData = {};
-    onSearchAttempt(searchData);
+    // let allInputs = document
+    //   .getElementsByClassName('search-bar')[0]
+    //   .getElementsByClassName('text_input');
+    // let searchData = {};
+    // onSearchAttempt(searchData);
   };
   return (
     <div className="search-bar-container">

@@ -10,6 +10,8 @@ export const updateUser = (userData: userType, token: string): actionType => ({
   data: userData,
   token,
 });
-export const logoutUser = (): Partial<actionType> => ({
+export const logoutUser = (): actionType => ({
   type: 'LOGOUT_USER',
+  data: {} as userType,
+  token: '',
 });

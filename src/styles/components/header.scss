@@ -81,3 +81,29 @@
   color: white;
   background: $myBlack;
 }
+.logo{
+  width: 24px;
+  height:24px;
+  background: transparent;
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+.online-headers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-area{
+  background: #1c1d1f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  object-fit: cover;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.8rem;
+  position: relative;
+  cursor: pointer;
+}

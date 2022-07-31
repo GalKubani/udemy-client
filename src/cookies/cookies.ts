@@ -22,7 +22,8 @@ export const getUserFromCookie = (): userDataType | null => {
   return JSON.parse(jsonUserData);
 };
 
-export const saveUserNameOnCookie = (userData: Partial<userType>) => {
+export const saveUserNameOnCookie = (name: string, email: string) => {
+  const userData = { name, email };
   const jsonUserData = JSON.stringify(userData);
   Cookies.set(USER_NAME, jsonUserData, {
     sameSite: 'strict',
