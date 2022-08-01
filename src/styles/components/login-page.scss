@@ -91,3 +91,43 @@
     margin-top: 0.4rem;
   }
 }
+.no-border{
+  border: 0;
+}
+.sign-up-input{
+  height: 4rem!important;
+  padding: 2rem 1.6rem 0;
+}
+.label-animated{
+  position: absolute;
+  top: 0.2rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  left: 0.6rem;
+  border: 1px solid transparent;
+  pointer-events: none;
+  transition: transform 150ms cubic-bezier(.2,0,.38,.9);
+  transform: translateY(1.2rem);
+  transform-origin: top left;
+}
+.signup-input-container{
+  border: 1px solid #1c1d1f;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  input{
+    outline: none;
+    transition: opacity 100ms linear;
+  }
+}
+.sign-up-input{
+  margin-bottom: 0!important;
+}
+.signup-input-container:active {
+  border-color: $myBlack;
+}
+.active{
+    transform: scale(.857) translateY(0);
+}

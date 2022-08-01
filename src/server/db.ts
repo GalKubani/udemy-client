@@ -1,18 +1,22 @@
 import Axios from 'axios';
 import { courseType, userDataType } from '../utils/types';
-//
 const DB_URL = `http://localhost:4040`;
-// export const subscribeToSite = async (email, password, name) => {
-//   try {
-//     const res = await Axios.post(DB_URL + `/users/add`, {
-//       email,
-//       password,
-//     });
-//     return res.data;
-//   } catch (err) {
-//     throw new Error(err);
-//   }
-// };
+export const subscribeToSite = async (
+  email: string,
+  password: string,
+  name: string,
+) => {
+  try {
+    const res = await Axios.post(DB_URL + `/users/add`, {
+      email,
+      password,
+      name,
+    });
+    return res.data;
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};
 export const loginToDB = async (
   email: string,
   password: string,

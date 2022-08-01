@@ -47,7 +47,6 @@ const LoginPage = () => {
     }
   };
   const deleteCookieHandle = () => {
-    // not working yet, need to render page again
     setUserCookieData({});
     deleteUserNameFromCookie();
   };
@@ -69,6 +68,7 @@ const LoginPage = () => {
           {!userCookieData.name && (
             <div>
               <input
+                required={true}
                 onBlur={onBlueEmailInput}
                 className="input-email"
                 placeholder="Email"
@@ -78,6 +78,7 @@ const LoginPage = () => {
           )}
           <div>
             <input
+              required={true}
               onBlur={onBluePasswordInput}
               className="input-password"
               placeholder="Password"
