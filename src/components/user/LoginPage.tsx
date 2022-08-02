@@ -90,9 +90,11 @@ const LoginPage = () => {
               Log In
             </button>
             or<span className="forgot-pw"> Forgot Password</span>
-            <div className="diff-account" onClick={deleteCookieHandle}>
-              Log in to a different account
-            </div>
+            {userCookieData.name && (
+              <div className="diff-account" onClick={deleteCookieHandle}>
+                Log in to a different account
+              </div>
+            )}
             <div className="margin-top">
               Dont have an account?{' '}
               <NavLink className="login-sign-up" to="/sign-up">

@@ -13,6 +13,7 @@ const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [checkboxMarked, setCheckboxMarked] = useState(false);
   const { updateLoginData } = useContext<LoginContextType>(LoginContext)!;
 
   const onBlurEmailInput = (e: any) => {
@@ -40,6 +41,9 @@ const SignupPage = () => {
       console.log(e);
     }
   };
+  const checkboxHandle = () => {
+    setCheckboxMarked(!checkboxMarked);
+  };
   return (
     <div className="login-page">
       <div className="login-title no-border">Sign up and start learning</div>
@@ -61,9 +65,15 @@ const SignupPage = () => {
             callback={onBlurPasswordInput}
           />
           <div className="submit-row">
+            <div onClick={checkboxHandle} className="checkbox-wrapper">
+              <input checked={checkboxMarked} type="checkbox" />
+              Send me special offers, personalized recommendations, and learning
+              tips
+            </div>
             <button type="submit" className="login-button">
               Sign up
             </button>
+            By signing up, you agree to our Terms of Use and Privacy Policy.
             <div className="margin-top">
               Already have an account?{' '}
               <NavLink className="login-sign-up" to="/login">

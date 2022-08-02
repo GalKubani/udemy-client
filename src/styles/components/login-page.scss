@@ -72,6 +72,8 @@
 }
 .submit-row{
   text-align: center;
+  font-size: 0.8rem;
+
 }
 .login-sign-up{
   margin-top: 12px;
@@ -93,6 +95,8 @@
 }
 .no-border{
   border: 0;
+  padding: 0;
+  padding-left: 24px;
 }
 .sign-up-input{
   height: 4rem!important;
@@ -111,12 +115,10 @@
   transform-origin: top left;
 }
 .signup-input-container{
-  border: 1px solid #1c1d1f;
   position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-
   input{
     outline: none;
     transition: opacity 100ms linear;
@@ -125,9 +127,40 @@
 .sign-up-input{
   margin-bottom: 0!important;
 }
-.signup-input-container:active {
-  border-color: $myBlack;
-}
 .active{
     transform: scale(.857) translateY(0);
+}
+.password-strength{
+  margin: 0.8rem;
+  height: 0.3rem;
+}
+.checkbox-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  cursor: pointer;
+  padding: 0.6rem 0 0.6rem 16px;
+  -webkit-user-select: none;
+  min-width: 18rem;
+  max-width: 60rem;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  text-align: left;
+  input{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: unset;
+  }
+}
+.showPWbutton{
+  position: absolute;
+  right: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 1.6rem;
+  img{
+    width: 100%;
+    height: 100%;
+  }
 }
