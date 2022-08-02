@@ -20,8 +20,15 @@ const Header = () => {
           <button className="categories-button">Categories</button>
         </div>
         <SearchBar />
-        <HeaderPopUp name="Udemy Business" />
-        <HeaderPopUp name="Teach on Udemy" />
+        <HeaderPopUp
+          text="Get your team access to over 16,000 top Udemy courses, anytime,
+              anywhere."
+          name="Udemy Business"
+        />
+        <HeaderPopUp
+          text="Turn what you know into an opportunity and reach millions around the world."
+          name="Teach on Udemy"
+        />
         {user.user?.name ? (
           <OnlineUserHeaders />
         ) : (

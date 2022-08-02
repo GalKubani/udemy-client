@@ -95,8 +95,7 @@
 }
 .no-border{
   border: 0;
-  padding: 0;
-  padding-left: 24px;
+  padding-bottom: 0;
 }
 .sign-up-input{
   height: 4rem!important;
@@ -131,15 +130,21 @@
     transform: scale(.857) translateY(0);
 }
 .password-strength{
-  margin: 0.8rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem;
   height: 0.3rem;
+  div{
+    div{
+      height: 0.1rem;
+    }
+  }
 }
 .checkbox-wrapper{
   display: flex;
   flex-wrap: wrap;
   position: relative;
   cursor: pointer;
-  padding: 0.6rem 0 0.6rem 16px;
+  padding: 0.8rem 0 0.6rem 1.2rem;
   -webkit-user-select: none;
   min-width: 18rem;
   max-width: 60rem;

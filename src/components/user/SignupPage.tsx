@@ -66,7 +66,11 @@ const SignupPage = () => {
           />
           <div className="submit-row">
             <div onClick={checkboxHandle} className="checkbox-wrapper">
-              <input checked={checkboxMarked} type="checkbox" />
+              <input
+                onChange={() => {}}
+                checked={checkboxMarked}
+                type="checkbox"
+              />
               Send me special offers, personalized recommendations, and learning
               tips
             </div>

@@ -5,7 +5,7 @@
   border: 1px solid $myBlack;
   top:100%;
   right: 0;
-  width:16rem;
+  width:17rem;
   background: #fff;
 }
 .modal-button{
@@ -20,9 +20,13 @@
   line-height: 1.2;
   letter-spacing: -.02rem;
   text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 1.4rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
 }
 .modal-content{
   padding:0.8rem;
+}
+.user-area-list{
+  padding: 0.8rem;
+  color: black
 }

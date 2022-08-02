@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 
 type props = {
   name: string;
+  text: string;
 };
-const HeaderPopUp = ({ name }: props) => {
+const HeaderPopUp = ({ name, text }: props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleMouseEnter = () => {
     setIsModalOpen(true);
@@ -20,10 +21,7 @@ const HeaderPopUp = ({ name }: props) => {
       {isModalOpen && (
         <div className="modal-container">
           <section className="modal-content">
-            <div className="modal-text">
-              Get your team access to over 16,000 top Udemy courses, anytime,
-              anywhere.
-            </div>
+            <div className="modal-text">{text}</div>
             <button
               className="modal-button"
               onClick={handleMouseLeave}

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import HeaderPopUp from '../main/HeaderPopUp';
 import { LoginContext } from '../../context/LoginContext';
 import { LoginContextType } from '../../utils/types';
 import { deleteUserFromCookie } from '../../cookies/cookies';
@@ -8,6 +7,7 @@ import { useNavigate, NavigateFunction } from 'react-router-dom';
 
 const OnlineUserHeaders = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { user, updateLoginData } = useContext<LoginContextType>(LoginContext)!;
   const navigate: NavigateFunction = useNavigate();
 
@@ -17,14 +17,40 @@ const OnlineUserHeaders = () => {
   const handleMouseLeave = () => {
     setIsUserMenuOpen(false);
   };
+  const handleMouseEnterLearning = () => {
+    setIsModalOpen(true);
+  };
+  const handleMouseLeaveLearning = () => {
+    setIsModalOpen(false);
+  };
   const onClickLogout = () => {
     updateLoginData(logoutUser());
     deleteUserFromCookie();
     navigate('/home');
   };
+  const goToMyLearning = () => {
+    navigate('/my-learning');
+  };
   return (
     <div className="online-headers">
-      <HeaderPopUp name="My Learning" />
+      <div
+        className="pop-up"
+        onMouseLeave={handleMouseLeaveLearning}
+        onMouseOver={handleMouseEnterLearning}>
+        <span className="pop-up-span">My learning</span>
+        {isModalOpen && (
+          <div className="modal-container">
+            <section className="modal-content">
+              <button
+                className="modal-button"
+                onClick={goToMyLearning}
+                type="button">
+                Go to My learning
+              </button>
+            </section>
+          </div>
+        )}
+      </div>
       <div className="logo">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +84,7 @@ const OnlineUserHeaders = () => {
         <span className="initials">{user.user?.name[0]}</span>
         {isUserMenuOpen && (
           <div className="modal-container">
-            <ul className="modal-content">
+            <ul className="user-area-list">
               <li onClick={onClickLogout}>Log out</li>
             </ul>
           </div>
