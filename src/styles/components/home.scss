@@ -1,0 +1,28 @@
+.billboard{
+  margin-bottom: 4.8rem;
+  display: block;
+  margin: 0 auto;
+  background-color: #e4e4f5;
+  position: relative;
+  width: 100%;
+  img{
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    object-position: initial;
+  }
+}
+.billboard-text{
+  position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0,  0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.1rem;
+  left: 7.2rem;
+  top: 6.4rem;
+  max-width: 28rem;
+  h1{
+    padding: 0;
+  }
+  p{
+    font-size: 1.1rem;
+  }
+}

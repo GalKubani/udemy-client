@@ -4,6 +4,8 @@ import { LoginContextType } from '../../utils/types';
 import { deleteUserFromCookie } from '../../cookies/cookies';
 import { logoutUser } from '../../actions/loginActions';
 import { useNavigate, NavigateFunction } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import OnlineUserLogos from './OnlineUserLogos';
 
 const OnlineUserHeaders = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -37,7 +39,9 @@ const OnlineUserHeaders = () => {
         className="pop-up"
         onMouseLeave={handleMouseLeaveLearning}
         onMouseOver={handleMouseEnterLearning}>
-        <span className="pop-up-span">My learning</span>
+        <span onClick={goToMyLearning} className="pop-up-span">
+          My learning
+        </span>
         {isModalOpen && (
           <div className="modal-container">
             <section className="modal-content">
@@ -51,40 +55,47 @@ const OnlineUserHeaders = () => {
           </div>
         )}
       </div>
-      <div className="logo">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="logo"
-          strokeWidth="1.4"
-          stroke="black"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-        </svg>
-      </div>
-      <div className="logo">
-        <svg
-          className="logo"
-          strokeWidth="1.4"
-          stroke="black"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M19.364 4.636a2 2 0 0 1 0 2.828a7 7 0 0 1 -1.414 7.072l-2.122 2.12a4 4 0 0 0 -.707 3.536l-11.313 -11.312a4 4 0 0 0 3.535 -.707l2.121 -2.123a7 7 0 0 1 7.072 -1.414a2 2 0 0 1 2.828 0z" />
-          <path d="M7.343 12.414l-.707 .707a3 3 0 0 0 4.243 4.243l.707 -.707" />
-        </svg>
-      </div>
+      <OnlineUserLogos />
       <div
-        className="user-area"
+        className="pop-up line-height"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
-        <span className="initials">{user.user?.name[0]}</span>
+        <div className="user-area">
+          <span>{user.user?.name[0].toUpperCase()}</span>
+        </div>
         {isUserMenuOpen && (
-          <div className="modal-container">
+          <div className="modal-container user-container">
+            <NavLink to="/personal-area">
+              <div className="profile-wrapper">
+                <span className="initials">
+                  {user.user?.name[0].toUpperCase()}
+                </span>
+                <div className="user-profile-dropdown">
+                  <div className="user-profile-name">{user.user?.name}</div>
+                  <div className="user-profile-email">{user.user?.email}</div>
+                </div>
+              </div>
+            </NavLink>
             <ul className="user-area-list">
+              <li onClick={goToMyLearning}>My learning</li>
+              <li>My cart</li>
+              <li>Wish list</li>
+              <li>Teach on udemy</li>
+            </ul>
+            <ul className="user-area-list">
+              <li>Notifications</li>
+              <li>Messages</li>
+            </ul>
+            <ul className="user-area-list">
+              <li>Notifications</li>
+              <li>Messages</li>
+            </ul>
+            <ul className="user-area-list">
+              <li>Notifications</li>
+              <li>Messages</li>
+            </ul>
+            <ul className="user-area-list">
+              <li>Help</li>
               <li onClick={onClickLogout}>Log out</li>
             </ul>
           </div>

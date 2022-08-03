@@ -2,6 +2,7 @@
   position: absolute;
   display:flex;
   align-items: center;
+  justify-content: center;
   border: 1px solid $myBlack;
   top:100%;
   right: 0;
@@ -20,13 +21,93 @@
   line-height: 1.2;
   letter-spacing: -.02rem;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 1.2rem;
 }
 .modal-content{
+  width: 100%;
   padding:0.8rem;
 }
 .user-area-list{
+  padding: 0.4rem;
+  color: black;
+  border-bottom: 1px solid #d1d7dc;
+  width: 100%;
+  li{
+    list-style: none;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  li:hover{
+    color: $myPurple;
+  }
+}
+.user-area{
+  background: #1c1d1f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  object-fit: cover;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
   padding: 0.8rem;
-  color: black
+  position: relative;
+  cursor: pointer;
+}
+
+.initials{
+  @extend .user-area;
+  width: 4rem;
+  font-size: 1.8rem;
+  height: 4rem;
+}
+.user-profile-dropdown{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  margin-left: 0.8rem;
+  min-width: 1px;
+  word-break: break-word;
+  div{
+    width: 100%;
+  }
+}
+.user-profile-dropdown:hover{
+  .user-profile-name{
+    color: $myPurple;
+  }
+}
+.profile-wrapper{
+  border-bottom: 1px solid #d1d7dc;
+  color: #1c1d1f;
+  display: flex;
+  padding: 1rem;
+}
+.user-container{
+  flex-direction: column;
+  top:2.8rem;
+  a{
+    width: 100%;
+    text-decoration: none;
+  }
+}
+.line-height{
+  line-height: unset;
+  top:0.8rem;
+}
+.user-profile-name{
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.user-profile-email{
+  font-size: 0.8rem;
+  color:#6a6f73;
+}
+.logo-container{
+  display: flex;
 }
